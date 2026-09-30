@@ -2,7 +2,7 @@
 
 Mi portafolio personal como programador junior: quién soy, cómo trabajo, lo que sé hacer y lo que he construido. Está hecho con HTML, CSS y JavaScript puros, sin frameworks ni dependencias, con una estética inspirada en los videojuegos, mi mayor pasatiempo.
 
-**Demo:** [tu-portafolio.onrender.com](https://tu-portafolio.onrender.com)
+**Demo:** [tu-portafolio.onrender.com](https://portafolio-za57.onrender.com/index.html)
 
 ## Qué incluye
 
@@ -46,7 +46,7 @@ portafolio/
 No requiere instalación. Clona el repositorio y ábrelo con un servidor local:
 
 ```bash
-git clone https://github.com/TU-USUARIO/TU-REPO.git
+git clone https://github.com/IkerDahinten2/portafolio.git
 cd portafolio
 python -m http.server 5500
 ```
@@ -71,7 +71,7 @@ Luego entra a `http://localhost:5500`. También sirve la extensión **Live Serve
 ## Contacto
 
 - Gmail: mauriciodahinten@gmail.com
-- LinkedIn: [linkedin.com/in/TU-USUARIO](https://www.linkedin.com/in/TU-USUARIO)
+- LinkedIn: [linkedin.com/in/TU-USUARIO](www.linkedin.com/in/mauricio-dahinten-2b3a351b3)
 - GitHub: [@IkerDahinten2](https://github.com/IkerDahinten2)
 
 ## Licencia
