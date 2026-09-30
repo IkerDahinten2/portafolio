@@ -15,7 +15,7 @@
   <a class="btn" href="html/proyectos.html" data-en="See my projects">Ver mis proyectos</a> <a class="btn alt" href="html/contacto.html" data-en="Let's talk">Hablemos</a>
  </div>
  <div class="foto">
-  <img src="img/foto.jpg" width="340" height="408" onerror="this.onerror=null;this.src='img/foto.jpg'" alt="Mauricio Dahinten">
+  <img src="img/foto.jpg" width="340" height="408" onerror="var n=this.dataset.i=(+this.dataset.i||0)+1;this.src=['img/foto.jpg','img/foto.webp','img/placeholder.svg'][n-1]||''" alt="Mauricio Dahinten">
   <span class="globo" data-en="Nice<br>to meet you!">¡Mucho<br>gusto!</span>
   <span class="pista" id="pista" data-en="Click me!">¡Hazme click!</span>
   <button id="moneda" aria-label="Moneda / Coin">+1</button>
