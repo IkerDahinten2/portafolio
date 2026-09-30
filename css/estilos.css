@@ -117,8 +117,3 @@ h2{font-size:.85rem;margin-bottom:.6rem}
 .hab li{padding:.35rem 0}
 .proy .img{height:clamp(4.5rem,13vh,7.5rem);margin:-1.1rem -1.1rem .8rem}
 @media(max-width:900px){.tres{grid-template-columns:1fr}}
-.foto img{object-position:center 15%}
-
-/* botón CV del header (fijo en todas las páginas) */
-.tog.cv{background:var(--moneda);color:#0A0A2E;text-decoration:none;display:inline-block}
-@media(max-width:760px){.bar{flex-wrap:wrap;gap:.5rem}.ctl{margin-left:auto}}
