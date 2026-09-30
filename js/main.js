@@ -19,7 +19,7 @@ let tema = leer('tema') || (matchMedia('(prefers-color-scheme:dark)').matches ? 
 document.body.insertAdjacentHTML('afterbegin',
   `<header><div class="bar"><a class="logo" href="${root}index.html">${NOMBRE}</a>
   <nav>${paginas.map(([id, es, en, u]) => `<a href="${root + u}" class="${id === actual ? 'on' : ''}" data-en="${en}">${es}</a>`).join('')}</nav>
-  <div class="ctl"><button class="tog" id="idioma"></button><button class="tog" id="tema"></button>
+  <div class="ctl"><a class="tog cv" id="cv" href="${root}cv/CV-Mauricio-Dahinten.pdf" download>CV</a><button class="tog" id="idioma"></button><button class="tog" id="tema"></button>
   <button id="menu" aria-label="Menu">MENU</button></div></div></header>`);
 document.body.insertAdjacentHTML('beforeend', '<footer id="pie"></footer>');
 
@@ -32,13 +32,15 @@ function aplicar() {
   });
   document.getElementById('pie').textContent = `© ${new Date().getFullYear()} ${NOMBRE}. ${PIE[lang]}`;
   const en = lang === 'en';
+  cv.title = en ? 'Download CV' : 'Descargar CV';
+  cv.setAttribute('aria-label', cv.title);
   idioma.textContent = en ? 'ES' : 'EN';
   idioma.setAttribute('aria-label', en ? 'Cambiar a español' : 'Switch to English');
   temaBtn.textContent = tema === 'dark' ? '☀' : '☾';
   temaBtn.setAttribute('aria-label', tema === 'dark' ? (en ? 'Light mode' : 'Modo claro') : (en ? 'Dark mode' : 'Modo oscuro'));
   document.querySelectorAll('.pips').forEach(p => p.title = en ? `Level ${p.dataset.n} of 5` : `Nivel ${p.dataset.n} de 5`);
 }
-const idioma = document.getElementById('idioma'), temaBtn = document.getElementById('tema');
+const cv = document.getElementById('cv'), idioma = document.getElementById('idioma'), temaBtn = document.getElementById('tema');
 idioma.onclick = () => { lang = lang === 'es' ? 'en' : 'es'; guardar('lang', lang); aplicar(); };
 temaBtn.onclick = () => { tema = tema === 'dark' ? 'light' : 'dark'; guardar('tema', tema); aplicar(); };
 document.getElementById('menu').onclick = () => document.querySelector('nav').classList.toggle('abierto');
