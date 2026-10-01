@@ -88,3 +88,19 @@ if (moneda) {
   let n = 0;
   moneda.onclick = () => { moneda.textContent = ++n; document.getElementById('pista')?.remove(); };
 }
+
+// Contacto: abre la app de correo con el destinatario y el asunto listos.
+// Si el equipo no tiene app de correo configurada, abre Gmail en el navegador.
+const correo = document.getElementById('correo');
+if (correo) {
+  const EMAIL = correo.getAttribute('href').replace('mailto:', '').split('?')[0];
+  correo.onclick = e => {
+    e.preventDefault();
+    const asunto = encodeURIComponent(lang === 'en' ? 'Contact from your portfolio' : 'Contacto desde tu portafolio');
+    location.href = `mailto:${EMAIL}?subject=${asunto}`;
+    setTimeout(() => {
+      if (document.hasFocus() && document.visibilityState === 'visible')
+        window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${EMAIL}&su=${asunto}`, '_blank', 'noopener');
+    }, 900);
+  };
+}
