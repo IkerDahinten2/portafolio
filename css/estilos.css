@@ -122,3 +122,12 @@ h2{font-size:.85rem;margin-bottom:.6rem}
 /* botón CV del header (fijo en todas las páginas) */
 .tog.cv{background:var(--moneda);color:#0A0A2E;text-decoration:none;display:inline-block}
 @media(max-width:760px){.bar{flex-wrap:wrap;gap:.5rem}.ctl{margin-left:auto}}
+
+/* logro de la moneda (200 clics): se queda fijo hasta recargar la página */
+.logro{position:fixed;right:1rem;bottom:3.5rem;z-index:50;display:flex;gap:.8rem;align-items:center;max-width:calc(100vw - 2rem);background:var(--moneda);color:#0A0A2E;border:3px solid var(--tinta);box-shadow:6px 6px 0 var(--sombra);padding:.7rem 1rem;animation:logro .5s steps(5) both}
+.logro-ico{font-size:1.8rem;line-height:1}
+.logro div{display:flex;flex-direction:column;gap:.25rem}
+.logro-tit{font:.5rem var(--px);text-transform:uppercase}
+.logro strong{font:.75rem var(--px)}
+.logro div>span:last-child{font-size:.85rem}
+@keyframes logro{from{transform:translateY(150%);opacity:0}}
