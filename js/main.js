@@ -82,11 +82,27 @@ if (foto && matchMedia('(hover:hover)').matches) {
   });
 }
 
-// Inicio: moneda clicable; el aviso desaparece con el primer clic
+// Inicio: moneda clicable; el aviso desaparece con el primer clic.
+// Al llegar a META clics se desbloquea un logro. El contador vive solo en memoria,
+// así que el logro dura hasta que se recarga (F5) o se cierra la página.
 const moneda = document.getElementById('moneda');
 if (moneda) {
+  const META = 200;
   let n = 0;
-  moneda.onclick = () => { moneda.textContent = ++n; document.getElementById('pista')?.remove(); };
+  moneda.onclick = () => {
+    moneda.textContent = ++n;
+    document.getElementById('pista')?.remove();
+    if (n === META) desbloquearLogro();
+  };
+  function desbloquearLogro() {
+    const es = `<span class="logro-tit">¡Logro desbloqueado!</span><strong>Dedo de acero</strong><span>${META} clics a la moneda</span>`;
+    const en = `<span class="logro-tit">Achievement unlocked!</span><strong>Iron finger</strong><span>${META} coin clicks</span>`;
+    const caja = document.createElement('div');
+    caja.className = 'logro';
+    caja.setAttribute('role', 'status');
+    caja.innerHTML = `<span class="logro-ico" aria-hidden="true">🏆</span><div data-es="${es.replace(/"/g, '&quot;')}" data-en="${en.replace(/"/g, '&quot;')}">${lang === 'en' ? en : es}</div>`;
+    document.body.append(caja);
+  }
 }
 
 // Contacto: abre la app de correo con el destinatario y el asunto listos.
